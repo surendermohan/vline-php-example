@@ -73,13 +73,13 @@ else{
       <form class="form-signin" method="post" action="./actions/login.php">
       	<h2><img src="images/logo.png"></h2>
         <h2 class="form-signin-heading">Please Sign In</h2>
-        <input type="text" class="input-block-level" placeholder="Username" name="username">
-        <input type="password" class="input-block-level" placeholder="Password" name="password">
+        <input type="text" class="input-block-level" placeholder="Phone" name="username">
+        <input type="password" class="input-block-level" placeholder="PIN" name="password">
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
         <?php 
 		if(array_key_exists('failed', $_GET)){
 		if($_GET['failed'] == 1){ ?>
-        	<div class="authfailure">Wrong username and password</div>
+        	<div class="authfailure">Wrong Phone and PIN</div>
         <?php }} ?>
       </form>
 
