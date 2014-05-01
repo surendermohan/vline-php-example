@@ -88,9 +88,9 @@ else{
             <p class="navbar-text pull-right">
               Logged in as <?php echo $_SESSION['user']['name'] ?>
             </p>
-            <ul class="nav">
+            <!--ul class="nav">
               <li><a href="./admin/index.php">Go to admin panel</a></li>
-            </ul>
+            </ul-->
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -100,17 +100,17 @@ else{
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
+            <div style="padding:2%; width:96%">
+                 <p>Click on any of the online users (highlighted in blue) below to initiate a call.</p>
+             </div>
+          </div><!--/.well -->
+          <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Users List</li>
               <?php while($row = mysqli_fetch_array($users, MYSQLI_ASSOC)){  ?>
               <li class="callbutton disabled" data-userid="<?php echo $row['id'] ?>"><a href="#"><?php echo $row['name'] ?></a></li>
               <?php } ?>
             </ul>
-          </div><!--/.well -->
-          <div class="well sidebar-nav">
-            <div style="padding:2%; width:96%">
-                 <p>Click on any of the online users highlighted in blue above to initiate a call.</p>
-             </div>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
