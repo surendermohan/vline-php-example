@@ -7,8 +7,8 @@
  */
 
 class Vline{
-	private $serviceID = "YOUR_SERVICE_ID";
-	private $apiSecret = "YOUR_API_SECRET";
+	private $serviceID = "pioneer";
+	private $apiSecret = "WCWvodqEjp-PHo9PfXE8iTaT0C-PTsNpAHtdhbQQzG4";
 	private $userID;
 	private $userDisplayName;
 	private $jwt;

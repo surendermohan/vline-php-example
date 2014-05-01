@@ -440,8 +440,9 @@ a:focus {
 }
 
 .row-fluid .span9 {
-  width: 74.46808510638297%;
-  *width: 74.41489361702126%;
+  width: 0%;
+  *width: 0%;
+  display: none;
 }
 
 .row-fluid .span8 {
@@ -470,8 +471,8 @@ a:focus {
 }
 
 .row-fluid .span3 {
-  width: 23.404255319148934%;
-  *width: 23.351063829787233%;
+  width: 100%;
+  *width: 100%;
 }
 
 .row-fluid .span2 {
