@@ -86,7 +86,8 @@ else{
           <a class="brand" href="#">ThatsApp</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <?php echo $_SESSION['user']['name'] ?>
+              <a href="./actions/logout.php">Log out</a>
+              <?php echo $_SESSION['user']['name'] ?>
             </p>
             <!--ul class="nav">
               <li><a href="./admin/index.php">Go to admin panel</a></li>
