@@ -64,7 +64,7 @@
         </ul>
         <div style="background-color:#eee; width:98%; padding:1%">
         All users added with the administration panel are stored in the <code>users</code> table in the
-        <code>vline-php-example</code> database. In order to better understand the integration,
+        <code>thatsapp</code> database. In order to better understand the integration,
         take a look at <code>vline-php-example/main.php</code> and <code>vline-php-example/classes/Vline.php</code>.
         </div>
       </p>

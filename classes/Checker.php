@@ -14,7 +14,7 @@ class Checker{
 				return false;
 			}
 			else{
-				$sql = 'SELECT COUNT(*) AS `exists` FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMATA.SCHEMA_NAME="vline-php-example"';
+				$sql = 'SELECT COUNT(*) AS `exists` FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMATA.SCHEMA_NAME="thatsapp"';
 				// execute the statement
 				$query = $mysqli->query($sql);
 				if ($query === false) {

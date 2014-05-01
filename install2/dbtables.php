@@ -51,7 +51,7 @@ $con = $installer->createDBandTables();
       <hr>
       <p>
       	<h2>Info</h2>
-        This step creates a database called <code>vline-php-example</code> along with all the tables needed
+        This step creates a database called <code>thatsapp</code> along with all the tables needed
         for the demo to run.
       </p>
       <hr>

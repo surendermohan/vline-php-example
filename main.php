@@ -37,7 +37,7 @@ else{
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>vLine PHP Example</title>
+    <title>ThatsApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -83,7 +83,7 @@ else{
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="#">vLine PHP Example</a>
+          <a class="brand" href="#">ThatsApp</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
               Logged in as <?php echo $_SESSION['user']['name'] ?>
@@ -99,13 +99,6 @@ else{
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-            <div class="well sidebar-nav">
-            <div style="padding:2%; width:96%">
-                <h4>Make calls</h4>
-                 <p>Click on any of the online users listed below in order to initiate a call. <br>
-Users that are online are highlighted in blue.</p>
-             </div>
-          </div><!--/.well -->
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Users List</li>
@@ -113,6 +106,11 @@ Users that are online are highlighted in blue.</p>
               <li class="callbutton disabled" data-userid="<?php echo $row['id'] ?>"><a href="#"><?php echo $row['name'] ?></a></li>
               <?php } ?>
             </ul>
+          </div><!--/.well -->
+          <div class="well sidebar-nav">
+            <div style="padding:2%; width:96%">
+                 <p>Click on any of the online users highlighted in blue above to initiate a call.</p>
+             </div>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">

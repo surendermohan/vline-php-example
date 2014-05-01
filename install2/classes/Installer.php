@@ -56,10 +56,10 @@ class VlinePHPinstaller{
 		$mysqli = new mysqli($conf->host, $conf->username, $conf->password);
 		
 		$toreturn = array("dbcreated"=>false,"tablecreated"=>false,"admincreated"=>false);
-		if($mysqli->query("CREATE DATABASE IF NOT EXISTS `vline-php-example` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;") === TRUE){
+		if($mysqli->query("CREATE DATABASE IF NOT EXISTS `thatsapp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;") === TRUE){
 			$toreturn['dbcreated'] = true;	
-			mysqli_select_db($mysqli, 'vline-php-example');
-			if($mysqli->query("CREATE TABLE IF NOT EXISTS `vline-php-example`.`user` (
+			mysqli_select_db($mysqli, 'thatsapp');
+			if($mysqli->query("CREATE TABLE IF NOT EXISTS `thatsapp`.`user` (
 				`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 				`username` VARCHAR( 150 ) NOT NULL ,
 				`password` VARCHAR( 150 ) NOT NULL ,
@@ -69,7 +69,7 @@ class VlinePHPinstaller{
 					$toreturn['tablecreated'] = TRUE;	
 					$result = $mysqli->query("SELECT * from `user`");
 					if($result->num_rows == 0){
-						$mysqli->query("INSERT INTO  `vline-php-example`.`user` (
+						$mysqli->query("INSERT INTO  `thatsapp`.`user` (
 							`id` ,
 							`username` ,
 							`password` ,

@@ -25,7 +25,7 @@ else{
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>vLine PHP Example Configuration</title>
+    <title>ThatsApp Configuration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -57,7 +57,7 @@ else{
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">vLine PHP Example</a>
+          <a class="brand" href="#">ThatsApp Example</a>
          <?php include("./admin_menu.php"); ?>
         </div>
       </div>

@@ -6,7 +6,7 @@ class DbHandler{
 		$r = fopen($pre.'conf.json', 'r');
 		$contents = fread($r, filesize($pre.'conf.json'));
 		$conf = json_decode($contents);	
-		$mysqli = new mysqli($conf->host, $conf->username, $conf->password, 'vline-php-example');
+		$mysqli = new mysqli($conf->host, $conf->username, $conf->password, 'thatsapp');
 		if (mysqli_connect_error()){
 			return false;
 		}
