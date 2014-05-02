@@ -43,18 +43,29 @@ class DbHandler{
 			return true;	
 		}
 		else{
-			$query = "select * from `user` where `username` = '".$this->mysqli->real_escape_string($data['username'])."' and `password` = '".$this->mysqli->real_escape_string($data['password'])."'";
+			// Compare password with last 4 characters of the username for now
+			$password = substr($data['username'], -4); // $this->mysqli->real_escape_string($data['password']);
+			$username = $this->mysqli->real_escape_string($data['country-code'].$data['username']);
+			$query = "select * from `user` where `username` = '".$username."' and `password` = '".$password."'";
 			$result = $this->mysqli->query($query);
 			if($result->num_rows == 0){
-				$_SESSION['plainuserauth'] = 0;
-				return false;
+				//$_SESSION['plainuserauth'] = 0;
+				//return false;
+				// Add new user with blank name. Ask for user's name on first login. Later ask for confirmation code
+				// TODO - this addUser could fail.
+				$result = $this->addUser(array('name' => '', 
+				'username' => $username,
+				'password' => $password));
+				$result = $this->mysqli->query($query);
 			}
-			else{
-				$_SESSION['plainuserauth'] = 1;
-				$therow = $result->fetch_array(MYSQLI_ASSOC);
-				$_SESSION['user'] = $therow;
-				return true;
+			$therow = $result->fetch_array(MYSQLI_ASSOC);
+			$_SESSION['user'] = $therow;
+			if (strlen($therow['name']) > 0) {
+				$_SESSION['plainuserauth'] = '1';
+			} else {
+				$_SESSION['plainuserauth'] = '2'; //new user
 			}
+			return true;
 		}
 	}
 	

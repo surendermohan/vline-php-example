@@ -17,7 +17,7 @@ else{
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sign in to the ThatsApp</title>
+    <title>Complete Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -70,22 +70,16 @@ else{
 
     <div class="container">
 
-      <form class="form-signin" method="post" action="./actions/login.php">
+      <form class="form-signin" method="post" action="./actions/update_name.php">
       	<h2><img src="images/logo.png"></h2>
-        <h2 class="form-signin-heading">Country/Phone</h2>
-		<select id="country-code" name="country-code">
-		<option value="91">India</option>
-		<option value="1">USA</option>
-		</select>
-        <input type="text" class="input-block-level" placeholder="10 Digit Phone Number" name="username">
-		<span style="display:none;">
-        <input type="password" class="input-block-level" placeholder="PIN" name="password">
-		</span>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <h2 class="form-signin-heading">Update your  name</h2>
+		Phone: <?php echo $_SESSION['user']['username'] ?>
+        <input type="text" class="input-block-level" placeholder="Your full name" name="fullname">
+        <button class="btn btn-large btn-primary" type="submit">Register</button>
         <?php 
 		if(array_key_exists('failed', $_GET)){
 		if($_GET['failed'] == 1){ ?>
-        	<div class="authfailure">Wrong Phone and PIN</div>
+        	<div class="authfailure">Please enter the name</div>
         <?php }} ?>
       </form>
 

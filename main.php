@@ -10,9 +10,7 @@ else{
 	// All authenticated users have $_SESSION['plainuserauth'] == 1
 	// If the user is already authenticated by the system then he/she stays. If not he/she is been directed to index.php page
 	// in order to fill in the authentication form
-	if($_SESSION['plainuserauth'] != 1)
-		header("Location: ./index.php");
-	else{
+	if($_SESSION['plainuserauth'] == '1'){
 	// the application is installed and configured properly, the user is authenticated
 	// we instantiate an object of the class DbHandler
 		$dbh = new DbHandler();
@@ -30,6 +28,10 @@ else{
 		$vline->setUser($_SESSION['user']['id'], $_SESSION['user']['name']);
 		$vline->init();
 	// Almost ready. All we have to do is to include the vline.js script in the head section.
+	} else if($_SESSION['plainuserauth'] == '2') {
+		header("Location: ./register.php");
+	} else {
+		header("Location: ./index.php");
 	}
 }
 ?>
@@ -108,9 +110,9 @@ else{
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Users List</li>
-              <?php while($row = mysqli_fetch_array($users, MYSQLI_ASSOC)){  ?>
+              <?php while($row = mysqli_fetch_array($users, MYSQLI_ASSOC)){  if (strlen($row['name']) > 0) { ?>
               <li class="callbutton disabled" data-userid="<?php echo $row['id'] ?>"><a href="#"><?php echo $row['name'] ?></a></li>
-              <?php } ?>
+              <?php } } ?>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
